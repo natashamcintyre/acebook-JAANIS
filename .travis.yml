@@ -1,12 +1,16 @@
 language: ruby
-rvm:
-  - "2.1.3"
-env:
-  - DB=postgresql
-script:
-  - RAILS_ENV=test bundle exec rake db:create db:migrate --trace
-  - bundle exec rspec test/
+cache:
+- bundler
+- yarn
+services:
+- postgresql
+before_install:
+- nvm install --lts
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - mysql -e 'create database mydb_test'
-bundler_args: --binstubs=./bundler_stubs
+  - bundle install --jobs=3 --retry=3
+  - yarn  
+  - bundle exec rake db:create 
+  - bundle exec rake db:schema:load
+script:
+- bundle exec rake test 
+- bundle exec rake test:system
