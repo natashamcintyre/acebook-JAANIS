@@ -10,20 +10,21 @@
         <%= form.label :username %>
         <%= form.text_field :username %>
         <%= form.label :email %>
-        <%= form.text_field :email %>
+        <%= form.email_field :email %>
         <%= form.label :password %>
-        <%= form.password_field :password %>
-
+        <%= form.password_field :password, :oninput => "passwordValidation()" %>
         <%= form.submit "Sign Me Up!" %>
       <% end %>
     </div>
 
+    <script>
+    function passwordValidation() {
+      console.log(`in the password alert function`);
+      if ($('user_password').length.val() < 6) {
+        alert("Please enter a password between 6 and 10 characters long");
+      }
+    }
+    </script>
+
   </body>
 </html>
-
-<!-- -> button "Sign Up" on homepage which links to users/new page - index.html.erb
--> users/new will be a form containing: -
-  - email address
-  - username
-  - password
-  - Sign Me Up! -->
