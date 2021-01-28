@@ -290,7 +290,7 @@ textarea {
 
 /* This is our style for the invalid fields */
 
-input:invalid{
+input:invalid {
   border-color: #900;
   background-color: #FDD;
 }
@@ -301,7 +301,7 @@ input:focus:invalid {
 
 /* This is the style of our error messages */
 .error {
-  width  : 100%;
+  width: 100%;
   padding: 0;
 
   font-size: 80%;
@@ -316,5 +316,17 @@ input:focus:invalid {
   padding: 0.3em;
 }
 
+.map-img {
+  width: 100%;
+}
+
+#alert {
+  color: #900;
+}
+
+label {
+  font-weight: lighter;
+  color: #3C5898;
+}
 
 /* This is our style for the invalid fields */

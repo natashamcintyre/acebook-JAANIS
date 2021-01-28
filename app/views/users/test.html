@@ -11,41 +11,44 @@
 </head>
 
 <body>
-
   <div class="container p-3">
-    <div class="row m-auto">
-      <div class="col-lg-10 col-md-6 m-auto writing-post">
-        <%= form_for @post do |form| %>
-        <div class="m-3 d-flex flex-column">
-          <%= form.text_area :message, placeholder: "What are you thinking?..." %>
-        </div>
-        <% # <%= form.submit <i class='fas fa-paper-plane'></i>, :class => "fas fa-paper-plane send-post" %>
-        <%= button_tag type: "submit", class: "send-post", id: "send-button" do %>
-        <i class='fas fa-paper-plane'></i>
-        <% end %>
-        <% end %>
-      </div>
-      <hr>
-      <div class="col-lg-10 col-md-6 m-auto">
-        <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
+    <div class="row">
+      <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
+        <h2>Acebook helps you connect with the world</h2>
+        <h3>Log in now and start talking to your friends</h3>
         <div class="d-flex flex-column">
-          <% @posts.each do |post| %>
-          <div class="post d-flex flex-row">
-            <div class="post-img">
-              <%= image_tag("user", width: 50) %>
-              <% # <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img"> %>
-            </div>
-            <div class="post-content  d-flex flex-column">
-              <p class="post-text"><%= post.message %></p>
-              <span class="post-date align-self-end">Posted by <%= post.user.username %> on
-                <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
-            </div>
+          <div class="d-flex flex-row">
+            <img alt="Logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_%28blue_dots%29.svg"
+              class="map-img">
           </div>
-          <% end %>
         </div>
+      </div>
+      <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
+        <h2 class="text-center">Log in</h2>
+        <p id='alert' class="text-center"><%= alert %></p>
+        <%= form_tag sessions_path do |form| %>
+        <div class="m-3 d-flex flex-column">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+          <span id="usernameHelp" class="form-text align-self-end">Enter your email address</span>
+        </div>
+        <div class="m-3 d-flex flex-column">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+          <span class="error" aria-live="polite"></span>
+          <span id="passwordHelp" class="form-text align-self-end">Enter your password</span>
+        </div>
+        <div class="m-3 d-flex flex-column text-center">
+          <%= submit_tag "Enter" %>
+        </div>
+        <div class="m-0 d-flex flex-column">
+          <span class="form-text text-center">Forgot password?</span>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

@@ -1,15 +1,37 @@
-<p id=”alert”><%= alert %></p>
-<h1>Login</h1>
-<%= form_tag sessions_path do |form| %>
-  <div class=”field”>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+<div class="container p-3">
+  <div class="row">
+    <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
+      <h2>Acebook helps you connect with the world</h2>
+      <h3>Log in now and start talking to your friends</h3>
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row">
+          <img alt="Logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_%28blue_dots%29.svg"
+            class="map-img">
+        </div>
+      </div>
+    </div>
+    <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
+      <h2 class="text-center">Log in</h2>
+      <p id='alert' class="text-center"><%= alert %></p>
+      <%= form_tag sessions_path do |form| %>
+      <div class="m-3 d-flex flex-column">
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+        <span id="usernameHelp" class="form-text align-self-end">Enter your email address</span>
+      </div>
+      <div class="m-3 d-flex flex-column">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+        <span class="error" aria-live="polite"></span>
+        <span id="passwordHelp" class="form-text align-self-end">Enter your password</span>
+      </div>
+      <div class="m-3 d-flex flex-column text-center">
+        <%= submit_tag "Enter" %>
+      </div>
+      <div class="m-0 d-flex flex-column">
+        <span class="form-text text-center">Forgot password?</span>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class=”field”>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class=”actions”>
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
+</div>
