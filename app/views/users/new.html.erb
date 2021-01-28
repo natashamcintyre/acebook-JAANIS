@@ -5,6 +5,13 @@
     <title>Sign up</title>
   </head>
   <body>
+    <% flash.each do |type, msg| %>
+      <% msg.each do |message| %>
+        <div>
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
     <div class='form' id='sign-up-form'>
       <%= form_for @user do |form| %>
         <%= form.label :username %>
