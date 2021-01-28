@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       redirect_to posts_url, notice: "You have successfully signed up to Acebook!"
     else
       # This could be extracted into a helper method somewhere to keep controllers skinny
+      # or may be better as javascript pop up things??
       @user.errors.full_messages.each do |message|
         flash.notice ||= []
         flash.notice << message
