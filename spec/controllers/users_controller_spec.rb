@@ -19,4 +19,11 @@ RSpec.describe UsersController, type: :controller do
       expect(User.find_by(username: "Test User")).to be
     end
   end
+
+  # describe "GET /show" do
+  #   it "responds with 200 ok" do
+  #     get :show
+  #     expect(response).to have_http_status(:ok)
+  #   end
+  # end
 end
