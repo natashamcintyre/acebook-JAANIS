@@ -1,34 +1,34 @@
-
-<div class="new-post-box">
-
-<div>
-
-  <%= link_to new_user_path do %>
-    Sign up please!
-  <% end %>
-
-</div>
-
-<div>
-
-<%= link_to new_post_path do %>
-  Write a New post
-<% end %>
-</div>
-
-<div class="posts">
-
-<% @posts.each do |post| %>
-  <div class="post-card-wrapper">
-  <div class="post-card-content">
-  <%= image_tag("user", width: 50) %>
-  <p class="username"><%=post.user.username%></p>
-  <hr>
-  <p class="message"><%= post.message %></p>
-  <p class="timestamp"><%= post.created_at.strftime("%H:%M %A %B %-d") %></p>
+<div class="container p-3">
+  <div class="row m-auto">
+    <div class="col-lg-10 col-md-6 m-auto writing-post">
+      <%= form_for @post do |form| %>
+      <div class="m-3 d-flex flex-column">
+        <%= form.text_area :message, placeholder: "What are you thinking?..." %>
+      </div>
+      <% # <%= form.submit <i class='fas fa-paper-plane'></i>, :class => "fas fa-paper-plane send-post" %>
+      <%= button_tag type: "submit", class: "send-post", id: "send-button" do %>
+      <i class='fas fa-paper-plane'></i>
+      <% end %>
+      <% end %>
+    </div>
+    <hr>
+    <div class="col-lg-10 col-md-6 m-auto">
+      <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
+      <div class="d-flex flex-column">
+        <% @posts.each do |post| %>
+        <div class="post d-flex flex-row">
+          <div class="post-img">
+            <%= image_tag("user", width: 50) %>
+            <% # <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img"> %>
+          </div>
+          <div class="post-content  d-flex flex-column">
+            <p class="post-text"><%= post.message %></p>
+            <span class="post-date align-self-end">Posted by <%= post.user.username %> on
+              <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  </div>
-<% end %>
-
-
 </div>
