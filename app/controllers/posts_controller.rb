@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     #change line below once user login working to User.find_by:
     @user = User.create(username: "Javi", email: "javi@acebook.com", password: "javi")
     @post = @user.posts.create(post_params)
+    respond_to do |format|
+      format.js
+      format.html
+    end
     redirect_to posts_url
   end
 

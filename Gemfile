@@ -9,6 +9,8 @@ gem "bcrypt", "~> 3.1.7"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 # Use postgresql as the database for Active Record
+gem "jquery-rails"
+
 gem "pg"
 # Use Puma as the app server
 gem "puma", "~> 3.7"
@@ -22,6 +24,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier", ">= 1.3.0"
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

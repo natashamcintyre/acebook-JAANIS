@@ -14,7 +14,7 @@
     <hr>
     <div class="col-lg-10 col-md-6 m-auto">
       <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
-      <div class="d-flex flex-column">
+      <div id='display-post' class="d-flex flex-column">
         <% @posts.each do |post| %>
         <div class="post d-flex flex-row">
           <div class="post-img">
@@ -30,3 +30,7 @@
         <% end %>
       </div>
     </div>
+
+    <script>
+      $('#display-post').append("<%= @posts.last %>");
+    </script>
