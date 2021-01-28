@@ -37,6 +37,7 @@
     </div>
     <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
       <h2 class="text-center">Sign up</h2>
+
         <%= form_for @user do |form| %>
           <div class="m-3 d-flex flex-column">
             <%= form.label :username %>
@@ -58,13 +59,7 @@
             <%= form.submit "Sign Me Up!" %>
           </div>
         <% end %>
+
     </div>
   </div>
 </div>
-
-<!-- -> button "Sign Up" on homepage which links to users/new page - index.html.erb
--> users/new will be a form containing: -
-  - email address
-  - username
-  - password
-  - Sign Me Up! -->
