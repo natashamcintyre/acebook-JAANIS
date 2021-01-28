@@ -245,6 +245,10 @@ textarea {
   .signup-box {
     margin: auto !important;
   }
+
+  textarea {
+    min-width: 250px;
+  }
 }
 
 
