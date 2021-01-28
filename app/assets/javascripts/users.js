@@ -31,11 +31,9 @@ window.onload = function() {
 
   password.addEventListener('input', function (event) {
     if (password.validity.valid) {
-      console.log('hello')
       passwordError.textContent = '';
       passwordError.className = 'error';
     } else {
-      console.log('hi')
       passwordShowError();
     }
   });
@@ -43,10 +41,8 @@ window.onload = function() {
   function passwordShowError() {
     if (password.validity.valueMissing) {
       passwordError.textContent = "You need to enter a password."
-      console.log(passwordError.textContent)
     } else if (password.validity.tooShort) {
       passwordError.textContent = "Password too short."
-      console.log(passwordError.textContent);
     }
     passwordError.className = 'error active';
   }
