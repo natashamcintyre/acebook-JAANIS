@@ -4,8 +4,9 @@ class PostsController < ApplicationController
   # end
 
   def create
-    #change line below once user login working to User.find_by:
-    @user = User.create(username: "Javi", email: "javi@acebook.com", password: "javi")
+
+    @user = current_user
+    
     @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
