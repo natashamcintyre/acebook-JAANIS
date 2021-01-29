@@ -21,7 +21,7 @@
           </div>
           <div class="post-content  d-flex flex-column">
             <p class="post-text"><%= post.message %></p>
-            <span class="post-date align-self-end">Posted by <%= post.user.username %> on
+            <span class="post-date align-self-end">Posted by <span class="username"><%= post.user.username %></span> at
               <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
           </div>
         </div>
