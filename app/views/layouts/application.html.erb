@@ -24,9 +24,7 @@
         <div class="dropdown">
           <button onclick="myFunction()" class="button dropdown-btn"><i class="fas fa-user"></i> <%= current_user.username %></button>
           <div id="myDropdown" class="dropdown-content">
-            <a href="#"><i class='fas fa-paper-plane'></i> Home</a>
-            <a href="#"><i class="fas fa-cog"></i> Profile</a>
-            <a href="#"><i class="fas fa-sign-out-alt"></i> <%= link_to "Log Out", logout_path %></a>
+            <a href="<%= logout_path %>"><i class="fas fa-sign-out-alt"></i> Log Out</a>
           </div>
         </div>
       <% else %>

@@ -241,6 +241,10 @@ textarea {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
+.send-post:focus {
+  outline: none !important;
+}
+
 @media only screen and (max-width: 600px) {
   .signup-box {
     margin: auto !important;
