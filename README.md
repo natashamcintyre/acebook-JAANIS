@@ -2,6 +2,35 @@
 by JAANIS
 
 REACT!!!
+Steps:
+1. Add script tags for react script (already done, currently in <head> in app/views/layouts/application.html.erb). Apparently these need changing for production (see [link](https://reactjs.org/docs/add-react-to-a-website.html#add-react-in-one-minute))
+
+```
+<%= javascript_include_tag "https://unpkg.com/react@17/umd/react.development.js" %>
+<%= javascript_include_tag "https://unpkg.com/react-dom@17/umd/react-dom.development.js" %>
+```
+
+2. Remove //= require_tree from app/assets/javascripts/application.js (already done)
+
+3. "Add dom container to html.erb file". EG:
+```
+<div id="like_button_container"></div>
+```
+
+4. "Create file for react component" and save it in app/assets/javascripts. EG: app/assets/javascripts/like_button.js
+
+5. Update config/initializers/assets.rb:
+
+```
+Rails.application.config.assets.precompile += %w( like_button.js )
+```
+
+6. Add script to end of html file:
+```
+<%= javascript_include_tag("like_button.js")%>
+```
+
+
 The start of getting that blasted like button to work... https://reactjs.org/docs/add-react-to-a-website.html#add-react-in-one-minute
 It took a helluva lot longer than 1 minute.
 
@@ -32,7 +61,7 @@ In config/initializers/assets.rb:
 Rails.application.config.assets.precompile += %w( like_button.js )
 ```
 
-but I don't really understand it because then, OF COURSE, it had a HUGE freakout (or maybe I did) because for some reason the script was running before anything else, including the application.html.erb script, which meant that it kept throwing the error that React was not defined. I found out it's something to do with the require_tree, so I removed that line and TADA it worked!! Now we will probably find that the require_tree is actually needed for other functionality... :facepalm:
+but I don't really understand it because then, OF COURSE, it had a HUGE freakout (or maybe I did) because for some reason the script was running before anything else, including the application.html.erb script, which meant that it kept throwing the error that React was not defined. I found out it's something to do with the require_tree, so I removed that line from the app/assets/javascripts/application.js file and TADA it worked!! Now we will probably find that the require_tree is actually needed for other functionality... :facepalm:
 
 I tried to remove the precompile instruction and replace the require_tree thing, probably because I feel they're doing similar things, but apparently they're not.
 
