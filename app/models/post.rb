@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   belongs_to :user
   # ensures user is a valid user
   validates_associated :user
+  # ensure message can't be blank
+  validates :message, presence: true
 end
