@@ -7,8 +7,8 @@ class User < ApplicationRecord
   # Use Javascript in html to show to user if input is incorrect
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  validates :password, length: { in: 6..10 }
-  
+  validates :password, presence: true, length: { in: 6..10 }
+
   # defines relationship between users and posts so that Active Record knows how
   # to interact with the database. (We are telling it a user's id could appear
   # mutliple times in the posts table)
