@@ -12,19 +12,9 @@
         <%= form.label :email %>
         <%= form.email_field :email %>
         <%= form.label :password %>
-        <%= form.password_field :password, :oninput => "passwordValidation()" %>
+        <%= form.password_field :password %>
         <%= form.submit "Sign Me Up!" %>
       <% end %>
     </div>
-
-    <script>
-    function passwordValidation() {
-      console.log(`in the password alert function`);
-      if ($('user_password').length.val() < 6) {
-        alert("Please enter a password between 6 and 10 characters long");
-      }
-    }
-    </script>
-
   </body>
 </html>
