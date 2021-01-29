@@ -6,3 +6,17 @@
   <%= form.submit "Submit" %>
 <% end %>
 </div>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="post-card-wrapper">
+    <div class="post-card-content">
+    <%= image_tag("user", width: 50) %>
+    <p class="username"><%= post.user.username %></p>
+    <hr>
+    <p class="message"><%= post.message %></p>
+    <p class="timestamp"><%= post.created_at.strftime("%H:%M %A %B %-d") %></p>
+    </div>
+    </div>
+  <% end %>
+</div>

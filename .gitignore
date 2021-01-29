@@ -26,3 +26,6 @@ coverage/*
 
 # ignore heroku file
 /acebook-jaanis*
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
