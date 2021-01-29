@@ -1,0 +1,341 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+
+body {
+  background-image: radial-gradient(circle 1224px at 10.6% 8.8%, rgba(255, 255, 255, 1) 0%, rgba(153, 202, 251, 1) 100.2%);
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+header {
+  background-color: #3C5898;
+  color: white;
+}
+
+.title {
+  margin-right: auto !important;
+}
+
+
+.post {
+  border-radius: 10px;
+  color: white;
+  border: #3C5898 2px solid;
+  margin: 1em auto;
+  background-color: #3C5898;
+  min-width: 300px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.post:hover {
+  background-color: white;
+  color: #3C5898 !important;
+}
+
+.post-img {
+  display: flex;
+  align-self: flex-start;
+  margin: 0.5em 1em;
+}
+
+.post-content {
+  width: 100%;
+  margin: 0.5em 1em 0.5em 0;
+}
+
+.post-text {
+  margin: 0 0 1em 0 !important;
+  text-align: justify;
+}
+
+.post-date {
+  color: gray;
+  font-style: italic;
+}
+
+
+.post-card-wrapper {
+  background-color: white;
+  width: 800px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.post-card-content {
+  padding: 10px;
+}
+
+.logo {
+  font-weight: bolder !important;
+}
+
+.username {
+  display: inline;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: grey;
+  float: right;
+}
+
+.username {
+  text-align: center;
+  display: inline-block;
+}
+
+.message {
+  text-align: center;
+}
+
+.new-message-page {
+  margin: 30px;
+}
+
+.new-post-box {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+.profile-img {
+  width: 50px;
+}
+
+.signup-box {
+  border-radius: 10px;
+  border: #3C5898 2px solid;
+  background-color: white;
+  padding: 2em 3em;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+label {
+  padding: 5px 10px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+  border-radius: 5px;
+  border: #3C5898 2px solid;
+  color: white;
+  padding: 5px 10px;
+  background: #3C5898;
+  font-weight: bold;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+.send-post:hover,
+textarea:focus,
+input[type=email]:focus {
+  background-color: white;
+  color: #3C5898;
+  outline: none;
+}
+
+input[type=submit],
+.send-post {
+  border-radius: 5px;
+  border: #3C5898 2px solid;
+  background-color: #3C5898;
+  color: white;
+  max-width: 200px;
+  margin: auto;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+
+.slogan {
+  line-height: 0;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw) !important;
+}
+
+h2 {
+  color: #3C5898;
+  font-size: calc(1.325rem + .9vw) !important;
+}
+
+h3 {
+  color: gray;
+}
+
+.button {
+  color: white;
+  border-color: white;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: w;
+  border: 1px solid white;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+}
+
+.button:hover {
+  color: #3C5898;
+  background-color: white;
+
+}
+
+.writing-post {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  border-radius: 5px;
+  border: #3C5898 2px solid;
+  background-color: white;
+  padding: 0.5em 1em;
+  min-width: 500px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 100px;
+  resize: none !important;
+  outline: none;
+  font-weight: bold;
+}
+
+.send-post {
+  float: right !important;
+  top: -67px !important;
+  position: relative !important;
+  border-radius: 50%;
+  right: 23px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.send-post:focus {
+  outline: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .signup-box {
+    margin: auto !important;
+  }
+
+  textarea {
+    min-width: 250px;
+  }
+}
+
+
+.dropdown-btn {
+  background-color: #3C5898;
+}
+
+.dropdown-btn {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 5px;
+}
+
+.dropdown-content a {
+  color: #3C5898;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content>a:hover {
+  background-color: #3C5898 !important;
+  color: white !important;
+}
+
+.show {
+  display: block;
+}
+
+/* CSS for validation forms & errors */
+
+
+
+/* This is our style for the invalid fields */
+
+input:invalid {
+  border-color: #900;
+  background-color: #FDD;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+.map-img {
+  width: 100%;
+}
+
+#alert {
+  color: #900;
+}
+
+label {
+  font-weight: lighter;
+  color: #3C5898;
+}
+
+/* This is our style for the invalid fields */
