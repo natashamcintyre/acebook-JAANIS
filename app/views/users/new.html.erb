@@ -1,65 +1,69 @@
-<div class="container p-3">
-  <div class="row">
-    <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
-      <h2>Acebook helps you connect with the world</h2>
-      <h3>Sign up now and start talking to your friends</h3>
-      <div class="d-flex flex-column">
-        <div class="post d-flex flex-row">
-          <div class="post-img">
-              <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+<% if current_user %>
+  <%= redirect_to post_url(@post) %>
+<% else %>
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
+        <h2>Acebook helps you connect with the world</h2>
+        <h3>Sign up now and start talking to your friends</h3>
+        <div class="d-flex flex-column">
+          <div class="post d-flex flex-row">
+            <div class="post-img">
+                <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+            </div>
+            <div class="post-content  d-flex flex-column">
+              <p class="post-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"</p>
+              <span class="post-date align-self-end">Posted by Ian one day ago</span>
+            </div>
           </div>
-          <div class="post-content  d-flex flex-column">
-            <p class="post-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"</p>
-            <span class="post-date align-self-end">Posted by Ian one day ago</span>
+          <div class="post d-flex flex-row">
+            <div class="post-img">
+                <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+            </div>
+            <div class="post-content  d-flex flex-column">
+              <p class="post-text">Hey guys, Just joined acebook! It's the best</p>
+              <span class="post-date align-self-end">Posted by Aman187 two days ago</span>
+            </div>
+          </div>
+          <div class="post d-flex flex-row">
+            <div class="post-img">
+                <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+            </div>
+            <div class="post-content  d-flex flex-column">
+              <p class="post-text">Hey guys, Just joined acebook! It's the best</p>
+              <span class="post-date align-self-end">Posted by Aman187 two days ago</span>
+            </div>
           </div>
         </div>
-        <div class="post d-flex flex-row">
-          <div class="post-img">
-              <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
-          </div>
-          <div class="post-content  d-flex flex-column">
-            <p class="post-text">Hey guys, Just joined acebook! It's the best</p>
-            <span class="post-date align-self-end">Posted by Aman187 two days ago</span>
-          </div>
-        </div>
-        <div class="post d-flex flex-row">
-          <div class="post-img">
-              <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
-          </div>
-          <div class="post-content  d-flex flex-column">
-            <p class="post-text">Hey guys, Just joined acebook! It's the best</p>
-            <span class="post-date align-self-end">Posted by Aman187 two days ago</span>
-          </div>
-        </div>
+
       </div>
+      <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
+        <h2 class="text-center">Sign up</h2>
 
-    </div>
-    <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
-      <h2 class="text-center">Sign up</h2>
-
-        <%= form_for @user do |form| %>
-          <div class="m-3 d-flex flex-column">
-            <%= form.label :username %>
-            <%= form.text_field :username %>
-            <span id="usernameHelp" class="form-text align-self-end">Choose your username.</span>
-          </div>
-          <div class="m-3 d-flex flex-column">
-            <%= form.label :email %>
-            <%= form.email_field :email %>
-            <span class="error" aria-live="polite"></span>
-            <span id="emailHelp" class="form-text align-self-end">We'll never share your email with anyone else.</span>
-          </div>
-          <div class="m-3 d-flex flex-column">
-            <%= form.label :password %>
-            <%= form.password_field :password, minlength: 8 %>
-            <span class="error" aria-live="polite"></span>
-            <span id="passwordHelp" class="form-text align-self-end">Min 8 characters</span>
-          </div>
-          <div class="m-3 d-flex flex-column text-center">
-            <span id="accept" class="form-text m-3">By creating an account you are accepting the <a href="">terms</a> and <a href="">conditions</a></span>
-            <%= form.submit "Sign Me Up!" %>
-          </div>
-        <% end %>
+          <%= form_for @user do |form| %>
+            <div class="m-3 d-flex flex-column">
+              <%= form.label :username %>
+              <%= form.text_field :username %>
+              <span id="usernameHelp" class="form-text align-self-end">Choose your username.</span>
+            </div>
+            <div class="m-3 d-flex flex-column">
+              <%= form.label :email %>
+              <%= form.email_field :email %>
+              <span class="error" aria-live="polite"></span>
+              <span id="emailHelp" class="form-text align-self-end">We'll never share your email with anyone else.</span>
+            </div>
+            <div class="m-3 d-flex flex-column">
+              <%= form.label :password %>
+              <%= form.password_field :password, minlength: 8 %>
+              <span class="error" aria-live="polite"></span>
+              <span id="passwordHelp" class="form-text align-self-end">Min 8 characters</span>
+            </div>
+            <div class="m-3 d-flex flex-column text-center">
+              <span id="accept" class="form-text m-3">By creating an account you are accepting the <a href="">terms</a> and <a href="">conditions</a></span>
+              <%= form.submit "Sign Me Up!" %>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
