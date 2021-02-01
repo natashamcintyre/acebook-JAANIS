@@ -15,9 +15,17 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC")
   end
 
+  def update
+    if @post.update(post_params)
+      redirect_to(@post.post)
+    else
+      render action: “edit”
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message, :created_at)
+    params.require(:post).permit(:message, :created_at, :post_id)
   end
 end
