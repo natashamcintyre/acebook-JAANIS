@@ -23,9 +23,9 @@
             <p class="post-text"><%= post.message %></p>
             <span class="post-date align-self-end">Posted by <span class="username"><%= post.user.username %></span> at
               <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
+              <p class="post-text"><%= link_to "Edit", edit_post_path(post) %></p>
           </div>
         </div>
         <% end %>
       </div>
     </div>
-
