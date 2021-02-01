@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
-  get 'posts', to: 'users#new' 
-  get 'home', to: redirect('/posts')
+  get "login", to: "sessions#new", as: "login"
+  get "logout", to: "sessions#destroy", as: "logout"
+  get "error", to: "users#error"
+  get "*path", to: redirect("/error")
+
 end
