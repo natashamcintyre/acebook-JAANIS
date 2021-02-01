@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to login_url, notice: "You have successfully signed up to Acebook!"
+    if @user.save
+      redirect_to login_url, notice: "You have successfully signed up to Acebook!"
+    else
+      render :new
+    end
   end
 
   def show
