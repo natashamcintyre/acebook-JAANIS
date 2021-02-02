@@ -1,5 +1,5 @@
 module Api
-  module V1 
+  module V1
     class PostsController < ApplicationController
       protect_from_forgery with: :null_session
       # def new
@@ -23,7 +23,7 @@ module Api
           render json: {error: post.errors.messages}, status: 422
         end
 
-        
+
         # @post = @user.posts.create(post_params)
         # redirect_to posts_url
       end
@@ -49,5 +49,5 @@ module Api
       end
 
     end
-  end 
-end 
+  end
+end
