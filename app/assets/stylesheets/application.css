@@ -15,7 +15,9 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
-body {
+
+body,
+html {
   height: 100%;
 }
 
