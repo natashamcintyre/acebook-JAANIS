@@ -10,15 +10,15 @@
         "/packs/js/application-2181adcc3224cdc0c9c1.js.map"
       ]
     },
-    "hello_react": {
+    "users": {
       "js": [
-        "/packs/js/hello_react-688de436ff04be03adbc.js"
+        "/packs/js/users-54a1cc2a5142945bf1af.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-688de436ff04be03adbc.js.map"
+        "/packs/js/users-54a1cc2a5142945bf1af.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-688de436ff04be03adbc.js",
-  "hello_react.js.map": "/packs/js/hello_react-688de436ff04be03adbc.js.map"
+  "users.js": "/packs/js/users-54a1cc2a5142945bf1af.js",
+  "users.js.map": "/packs/js/users-54a1cc2a5142945bf1af.js.map"
 }
