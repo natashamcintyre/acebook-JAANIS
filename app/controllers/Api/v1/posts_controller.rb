@@ -9,8 +9,11 @@ module Api
       def index
         # @post = Post.new
         # @posts = Post.all.order("created_at DESC")
-        posts = Post.all
-        render json: PostSerializer.new(posts, options).serialized_json
+        posts = Post.joins(:user)
+        data = PostSerializer.new(posts, include: [:user]).serializable_hash
+        # data = Post.includes(:user).references(:user).map {|post| {message: post.message, user: post.user.username} }.to_json
+        
+        render json: data
       end
 
       def create
