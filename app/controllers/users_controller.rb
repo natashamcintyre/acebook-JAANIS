@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to login_url, notice: "You have successfully signed up to Acebook!"
+      session[:user_id] = @user.id
+      redirect_to posts_url, notice: "Logged in!"
     else
       render :new
     end

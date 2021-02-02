@@ -150,6 +150,7 @@ input[type=email] {
   padding: 5px 10px;
   background: #3C5898;
   font-weight: bold;
+  width: 100%;
 }
 
 input[type=text]:focus,
@@ -297,15 +298,6 @@ textarea {
 
 
 /* This is our style for the invalid fields */
-
-input:invalid {
-  border-color: #900;
-  background-color: #FDD;
-}
-
-input:focus:invalid {
-  outline: none;
-}
 
 /* This is the style of our error messages */
 .error {

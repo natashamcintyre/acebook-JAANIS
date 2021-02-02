@@ -1,5 +1,6 @@
 
 <div class="container p-3">
+
   <div class="row">
     <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
       <h2>Acebook helps you connect with the world</h2>
@@ -36,23 +37,36 @@
 
     </div>
     <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
-      <h2 class="text-center">Sign up</h2>
-
-        <%= form_for @user do |form| %>
-          <div class="m-3 d-flex flex-column">
+    <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="signup-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h2 class="text-center">Sign up</h2></a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="login-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><h2 class="text-center">Login</h2></a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="signup-tab">
+      <%= form_for @user do |form| %>
+        <div class="m-3 d-flex flex-column">
             <%= form.label :username %>
-            <%= form.text_field :username %>
+            <%= form.text_field :username, :required => true %>
             <span id="usernameHelp" class="form-text align-self-end">Choose your username.</span>
           </div>
           <div class="m-3 d-flex flex-column">
             <%= form.label :email %>
-            <%= form.email_field :email %>
+            <%= form.email_field :email, :required => true %>
             <span class="error" aria-live="polite"></span>
             <span id="emailHelp" class="form-text align-self-end">We'll never share your email with anyone else.</span>
           </div>
           <div class="m-3 d-flex flex-column">
             <%= form.label :password %>
-            <%= form.password_field :password, minlength: 8 %>
+            <%= form.password_field :password, minlength: 8, :required => true %>
             <span class="error" aria-live="polite"></span>
             <span id="passwordHelp" class="form-text align-self-end">Min 8 characters</span>
           </div>
@@ -61,6 +75,11 @@
             <%= form.submit "Sign Me Up!" %>
           </div>
         <% end %>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="login-tab">
+      <%= render "/sessions/new" %>
+      </div>
+    </div>
     </div>
   </div>
 </div>
