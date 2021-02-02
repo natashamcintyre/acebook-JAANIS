@@ -3,7 +3,7 @@
     <div class="col-lg-10 col-md-6 m-auto writing-post">
       <%= form_for @post do |form| %>
       <div class="m-3 d-flex flex-column">
-        <%= form.text_area :message, placeholder: "What are you thinking?...", :required => true  %>
+        <%= form.text_area :message, placeholder: "What are you thinking?...", :required => true %>
       </div>
       <%= button_tag type: "submit", class: "send-post", id: "send-button" do %>
       <i class='fas fa-paper-plane'></i>
@@ -13,19 +13,9 @@
     <hr>
     <div class="col-lg-10 col-md-6 m-auto">
       <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-column" id="post_pane">
         <% @posts.each do |post| %>
-        <div class="post d-flex flex-row">
-          <div class="post-img">
-            <%= image_tag("user", width: 50) %>
-          </div>
-          <div class="post-content  d-flex flex-column">
-            <p class="post-text"><%= post.message %></p>
-            <span class="post-date align-self-end">Posted by <span class="username"><%= post.user.username %></span> at
-              <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
-              <p class="post-text"><%= link_to "Edit", edit_post_path(post) %></p>
-          </div>
-        </div>
+        <% render "comments/comments", post: post %>
         <% end %>
       </div>
     </div>

@@ -15,7 +15,9 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
-
+body {
+  height: 100%;
+}
 
 body {
   background-image: radial-gradient(circle 1224px at 10.6% 8.8%, rgba(255, 255, 255, 1) 0%, rgba(153, 202, 251, 1) 100.2%);

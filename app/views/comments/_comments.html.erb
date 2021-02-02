@@ -1,0 +1,11 @@
+<div class="post d-flex flex-row">
+  <div class="post-img">
+    <%= image_tag("user", width: 50) %>
+  </div>
+  <div class="post-content  d-flex flex-column">
+    <p class="post-text"><%= post.message %></p>
+    <span class="post-date align-self-end">Posted by <span class="username"><%= post.user.username %></span> at
+      <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
+      <p class="post-text"><%= link_to "Edit", edit_post_path(post) %> | <%= link_to "Delete", post, methd: :delete, data: { confirm: "Are you sure?" } %></p>
+  </div>
+</div>
