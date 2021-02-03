@@ -52,10 +52,10 @@ header {
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-.post:hover {
+/* .post:hover {
   background-color: white;
   color: #3C5898 !important;
-}
+} */
 
 .post-img {
   display: flex;
@@ -344,9 +344,9 @@ label {
 
 /* This is our style for the invalid fields */
 .removed {
-  display: none !important;
+  /* display: none !important;
   visibility: hidden !important;
-  position: absolute !important;
+  position: absolute !important; */
 }
 
 .delete {

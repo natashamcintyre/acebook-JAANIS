@@ -33,7 +33,9 @@
               </p>
               <span class="post-date align-self-end">Posted at
                 <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
+                 <% if current_user.username == post.user.username %>
                 <p class="post-text"><%= link_to "Edit", edit_post_path(post) %></p>
+                <% end %>
             </div>
           </div> 
         <% end %>
