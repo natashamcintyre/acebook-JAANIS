@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   resources :posts, only: [:index]
   resources :users, only: [:new]
 
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get "login", to: "sessions#create", as: "login"
+  get "logout", to: "sessions#destroy", as: "logout"
+  get "error", to: "users#error"
+  get "*path", to: redirect("/error")
 
 end
 

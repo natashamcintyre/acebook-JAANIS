@@ -56,5 +56,8 @@ end
 
 # Adding SIMPLECOV
 group :test do
+  # provides testing for validations on models
+  gem 'shoulda-matchers', '~> 4.0'
+  # for test coverage
   gem "simplecov", require: false
 end

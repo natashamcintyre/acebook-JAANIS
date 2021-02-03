@@ -25,12 +25,17 @@
             <p class="post-text"><%= post.message %></p>
             <span class="post-date align-self-end">Posted by <span class="username"><%= post.user.username %></span> at
               <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
+<<<<<<< HEAD
 
+=======
+              <p class="post-text"><%= link_to "Edit", edit_post_path(post) %></p>
+>>>>>>> master
           </div>
         </div>
         <% end %>
       </div>
     </div>
+<<<<<<< HEAD
     <h1> This is the JS stuff </h1> 
     <div class="col-lg-10 col-md-6 m-auto">
       <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
@@ -40,3 +45,5 @@
     </div> 
     <%= javascript_include_tag "posts" %>
     
+=======
+>>>>>>> master
