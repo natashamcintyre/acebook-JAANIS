@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :posts, only: [:index]
-  resources :users, only: [:new]
+  resources :posts, only: [:index, :edit, :update, :destroy, :create]
+  resources :users, only: [:new, :create]
 
   get "login", to: "sessions#create", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"

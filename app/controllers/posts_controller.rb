@@ -10,12 +10,6 @@ class PostsController < ApplicationController
   #   @post = Post.new
   # end
 
-    def index
-      @post = Post.new
-      @posts = Post.all.order("created_at DESC")
-    end
-
-
   def update
     @post = Post.find_by(id: params[:id])
     @post.update(message: params[:post][:message])
@@ -26,11 +20,11 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
-#   def create
-#     @user = current_user
-#     @post = @user.posts.create(post_params)
-#     redirect_to posts_url
-#   end
+  def create
+    @user = current_user
+    @post = @user.posts.create(post_params)
+    redirect_to posts_url
+  end
 #
 
 #
