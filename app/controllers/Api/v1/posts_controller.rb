@@ -9,8 +9,9 @@ module Api
       def index
         # @post = Post.new
         # @posts = Post.all.order("created_at DESC")
-        posts = Post.all
-        render json: PostSerializer.new(posts, options).serialized_json
+        posts = Post.joins(:user).order('created_at DESC')
+        data = ActiveModel::Serializer::CollectionSerializer.new(posts, each_serializer: PostSerializer)
+        render json: data
       end
 
       def create
@@ -45,7 +46,7 @@ module Api
       end
 
       def options
-        @options ||= {include: %i[user]}
+        @options ||= {include: %i[user.username]}
       end
 
     end
