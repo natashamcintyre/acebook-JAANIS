@@ -30,5 +30,9 @@ class PostsController < ApplicationController
 #     params.require(:post).permit(:message, :created_at, :post_id)
 #   end
 
+  def destroy
+  end
+
+  private
 
 end

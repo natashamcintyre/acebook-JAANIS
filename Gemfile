@@ -8,6 +8,7 @@ end
 gem "bcrypt", "~> 3.1.7"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 # Use postgresql as the database for Active Record
 gem "pg"
 # Use Puma as the app server
@@ -57,7 +58,7 @@ end
 # Adding SIMPLECOV
 group :test do
   # provides testing for validations on models
-  gem 'shoulda-matchers', '~> 4.0'
+  gem "shoulda-matchers", "~> 4.0"
   # for test coverage
   gem "simplecov", require: false
 end

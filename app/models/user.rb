@@ -12,5 +12,5 @@ class User < ApplicationRecord
   # defines relationship between users and posts so that Active Record knows how
   # to interact with the database. (We are telling it a user's id could appear
   # mutliple times in the posts table)
-  has_many :posts
+  has_many :posts, dependent: :destroy
 end
