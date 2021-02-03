@@ -29,4 +29,6 @@ class PostsController < ApplicationController
 #   def post_params
 #     params.require(:post).permit(:message, :created_at, :post_id)
 #   end
+
+
 end
