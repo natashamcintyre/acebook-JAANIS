@@ -1,3 +1,5 @@
+<h1> This is the ruby stuff </h1> 
+
 <div class="container p-3">
   <div class="row m-auto">
     <div class="col-lg-10 col-md-6 m-auto writing-post">
@@ -29,8 +31,35 @@
         <% end %>
       </div>
     </div>
+    <h1> This is the JS stuff </h1> 
+
+    <div id="jsstuff">
+    </div> 
 
     <script>
-      this will fetch the json from the API to display on the posts view. It will also put the HTML in
+
+      var x  = document.getElementById('jsstuff'); 
+      x.innerHTML = "hello!";
+
+      fetch('http://localhost:3000/api/v1/posts')
+        .then(response => response.json())
+        .then(data => renderPost(data));
+
+      function renderPost(data){
+        var x  = document.getElementById('jsstuff');
+        data.forEach(function(post){
+          postHTML = ` <div class="post d-flex flex-row">
+          <div class="post-content  d-flex flex-column">
+            <p class="post-text">${post.message}</p>
+            <span class="post-date align-self-end">Posted by <span class="username"> ${post.user.username} </span> 
+            </span>
+              
+          </div>
+        </div>`
+        x.insertAdjacentHTML('afterend', postHTML); 
+        });
+    };
+
       
     </script>
+    

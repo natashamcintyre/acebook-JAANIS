@@ -7,11 +7,8 @@ module Api
       # end
 
       def index
-        # @post = Post.new
-        # @posts = Post.all.order("created_at DESC")
-        posts = Post.joins(:user)
-        data = PostSerializer.new(posts, include: [:user]).serializable_hash
-        # data = Post.includes(:user).references(:user).map {|post| {message: post.message, user: post.user.username} }.to_json
+        posts = Post.joins(:user).order('created_at DESC')
+        data = ActiveModel::Serializer::CollectionSerializer.new(posts, each_serializer: PostSerializer)
         
         render json: data
       end
