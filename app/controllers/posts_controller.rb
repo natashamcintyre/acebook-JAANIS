@@ -10,11 +10,11 @@ class PostsController < ApplicationController
   #   @post = Post.new
   # end
 
-  def create
-    @user = current_user
-    @post = @user.posts.create(post_params)
-    redirect_to posts_url
-  end
+    def index
+      @post = Post.new
+      @posts = Post.all.order("created_at DESC")
+    end
+
 
   def update
     @post = Post.find_by(id: params[:id])
@@ -25,6 +25,29 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find_by(id: params[:id])
   end
+
+#   def create
+#     @user = current_user
+#     @post = @user.posts.create(post_params)
+#     redirect_to posts_url
+#   end
+#
+
+#
+#   def update
+#     if @post.update(post_params)
+#       redirect_to(@post.post)
+#     else
+#       render action: “edit”
+#     end
+#   end
+#
+#   private
+#
+#   def post_params
+#     params.require(:post).permit(:message, :created_at, :post_id)
+#   end
+
 
   def destroy
     @post.destroy
@@ -37,6 +60,7 @@ class PostsController < ApplicationController
 
   private
 
+
   def set_post
     @post = Post.find_by(id: params[:id])
   end
@@ -44,4 +68,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :created_at, :post_id)
   end
+
 end
