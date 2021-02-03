@@ -7,7 +7,7 @@ module Api
       # end
 
       def index
-        posts = Post.joins(:user).order('created_at DESC')
+        posts = Post.joins(:user).order('created_at')
         data = ActiveModel::Serializer::CollectionSerializer.new(posts, each_serializer: PostSerializer)
         
         render json: data

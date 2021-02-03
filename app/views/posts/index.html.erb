@@ -32,34 +32,11 @@
       </div>
     </div>
     <h1> This is the JS stuff </h1> 
-
-    <div id="jsstuff">
-    </div> 
-
-    <script>
-
-      var x  = document.getElementById('jsstuff'); 
-      x.innerHTML = "hello!";
-
-      fetch('http://localhost:3000/api/v1/posts')
-        .then(response => response.json())
-        .then(data => renderPost(data));
-
-      function renderPost(data){
-        var x  = document.getElementById('jsstuff');
-        data.forEach(function(post){
-          postHTML = ` <div class="post d-flex flex-row">
-          <div class="post-content  d-flex flex-column">
-            <p class="post-text">${post.message}</p>
-            <span class="post-date align-self-end">Posted by <span class="username"> ${post.user.username} </span> 
-            </span>
-              
-          </div>
-        </div>`
-        x.insertAdjacentHTML('afterend', postHTML); 
-        });
-    };
-
+    <div class="col-lg-10 col-md-6 m-auto">
+      <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
+      <div class="d-flex flex-column" id="posts">
       
-    </script>
+      </div> 
+    </div> 
+    <%= javascript_include_tag "posts" %>
     
