@@ -4,19 +4,19 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
-  def create
-    @user = User.create(user_params)
-    redirect_to login_url, notice: "You have successfully signed up to Acebook!"
-  end
+#   def create
+#     @user = User.create(user_params)
+#     redirect_to login_url, notice: "You have successfully signed up to Acebook!"
+#   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+#   def show
+#     @user = User.find(params[:id])
+#   end
 
-  private
+#   private
 
-  def user_params
-    params.require(:user).permit(:username, :email, :password)
-  end
+#   def user_params
+#     params.require(:user).permit(:username, :email, :password)
+#   end
 
 end
