@@ -22,7 +22,11 @@
             <div class="post-content  d-flex flex-column">
               <div class="d-flex justify-content-between">
                 <span class="username"><%= post.user.username %></span>
-                <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?", remote: true }, class: "delete" %>
+                <% if current_user.username == post.user.username %>
+                  <%= link_to post, method: :delete, data: { confirm: "Are you sure?", remote: true }, class: "delete" do %>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                <% end %>
               </div>
               <p class="post-text my-2">
                 <%= post.message %>

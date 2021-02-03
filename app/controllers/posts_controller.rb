@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to(@post.post)
     else
-      render action: “edit”
+      render action: "edit"
     end
   end
 
