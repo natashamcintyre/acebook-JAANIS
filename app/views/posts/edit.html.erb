@@ -1,4 +1,12 @@
-<h1>Editing Post</h1>
-<%= render "form", post: @post %>
+<h1>Editing Post </h1>
+<% # <%= render "form", post: @post %>
 <%= link_to "Show", @post %> |
 <%= link_to "Back", posts_path %>
+<%= form_for @post do |form| %>
+  <div class="m-3 d-flex flex-column">
+        <%= form.text_area :message, placeholder: "What are you thinking?...", :required => true %>
+      </div>
+      <%= button_tag type: "submit", class: "send-post", id: "send-button" do %>
+      <i class='fas fa-paper-plane'></i>
+      <% end %>
+<% end %>

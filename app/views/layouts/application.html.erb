@@ -29,8 +29,6 @@
             <a href="<%= logout_path %>"><i class="fas fa-sign-out-alt"></i> Log Out</a>
           </div>
         </div>
-      <% else %>
-        <a class="button" href="<%= login_path %>">Log in</a>
       <% end %>
     </header>
 
@@ -62,6 +60,9 @@
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
+      function optionsDropdownFunction() {
+        document.getElementById("optionsDropdown").classList.toggle("show");
+      }
       // Close the dropdown if the user clicks outside of it
       window.onclick = function(event) {
         if (!event.target.matches('.dropdown-btn')) {
@@ -75,6 +76,19 @@
           }
         }
       }
+      window.onclick = function(event) {
+        if (!event.target.matches('.options-dropdown-btn')) {
+          var optionsDropdowns = document.getElementsByClassName("options-dropdown-content");
+          var i;
+          for (i = 0; i < optionsDropdowns.length; i++) {
+            var openOptionsDropdown = optionsDropdowns[i];
+            if (openOptionsDropdown.classList.contains('show')) {
+              openOptionsDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+      
     </script>
   </body>
 </html>

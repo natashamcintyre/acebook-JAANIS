@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <hr>
-    <div class="col-lg-10 col-md-6 m-auto">
+    <div class="col-lg-10 col-md-9 m-auto">
       <h3 class="text-center"><i class='fas fa-paper-plane'></i> All posts</h3>
       <div class="d-flex flex-column">
         <% @posts.each do |post| %>
@@ -22,10 +22,22 @@
               <%= image_tag("user", width: 50) %>
             </div>
             <div class="post-content  d-flex flex-column">
-              <p class="post-text"><%= post.message %></p>
-              <span class="post-date align-self-end">Posted by <span class="username"><%= post.user.username %></span> at
+              <div class="d-flex justify-content-between">
+                <span class="username"><%= post.user.username %></span>
+                <% if current_user.username == post.user.username %>
+                  <%= link_to post, method: :delete, data: { confirm: "Are you sure?", remote: true }, class: "delete" do %>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <p class="post-text my-2">
+                <%= post.message %>
+              </p>
+              <span class="post-date align-self-end">Posted at
                 <%= post.created_at.strftime("%H:%M %A %B %-d") %></span>
-                <p class="post-text"><%= link_to "Edit", edit_post_path(post) %> | <%= link_to "Delete", post, methd: :delete, data: { confirm: "Are you sure?" } %></p>
+                 <% if current_user.username == post.user.username %>
+                <p class="post-text"><%= link_to "Edit", edit_post_path(post) %></p>
+                <% end %>
             </div>
           </div> 
         <% end %>
