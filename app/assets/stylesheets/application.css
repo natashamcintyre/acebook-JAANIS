@@ -358,10 +358,16 @@ a {
   color: white
 }
 
-a:link{
-  color: white
+.logo {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.link-to-text-colour {
+.slogan {
   color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
