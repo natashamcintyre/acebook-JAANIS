@@ -4,7 +4,7 @@
     <div class="col-lg-10 col-md-6 m-auto writing-post">
       <%= form_for @post do |form| %>
       <div class="m-3 d-flex flex-column">
-        <%= form.text_area :message, placeholder: "What are you thinking?...", :required => true %>
+        <%= form.text_area :message,id:"postBox", placeholder: "What are you thinking?...", :required => true %>
       </div>
       <%= button_tag type: "submit", class: "send-post", id: "send-button" do %>
       <i class='fas fa-paper-plane'></i>

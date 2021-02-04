@@ -2,6 +2,7 @@ module Api
   module V1
     class PostsController < ApplicationController
       protect_from_forgery with: :null_session
+      skip_before_action :verify_authenticity_token, :only => [:create]
       # def new
       #   @post = Post.new
       # end
@@ -14,18 +15,18 @@ module Api
       end
 
       def create
-        # user = current_user
-        post = Post.new(post_params)
+        user = current_user
+        post = user.posts.create(post_params)
 
-        if post.save
-          render json: PostSerializer.new(post).serialized_json
-        else
-          render json: {error: post.errors.messages}, status: 422
-        end
-
-
+        # if post.save
+        #   render json: PostSerializer.new(post).serialized_json
+        # else
+        #   render json: {error: post.errors.messages}, status: 422
+        # end
         # @post = @user.posts.create(post_params)
         # redirect_to posts_url
+
+        
       end
 
       def destroy
@@ -41,7 +42,7 @@ module Api
       private
 
       def post_params
-        params.require(:post).permit(:message, :created_at, :user_id)
+        params.require(:post).permit(:message)
       end
 
       def options

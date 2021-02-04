@@ -1,6 +1,27 @@
     fetch('http://localhost:3000/api/v1/posts')
       .then(response => response.json())
       .then(data => renderPost(data));
+
+function getPostData(message){
+  console.log("im in this function")
+    fetch('http://localhost:3000/api/v1/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+     },
+      body: JSON.stringify({
+        "message": `${message}`
+       
+      })
+    })
+    console.log(message)
+}
+
+document.getElementById('send-button').addEventListener("click",function(event) {
+  event.preventDefault()
+  var message = document.getElementById('postBox').value
+  getPostData(message)
+})
    
     function renderPost(data){
       var x  = document.getElementById('posts');
