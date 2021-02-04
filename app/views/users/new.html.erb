@@ -1,6 +1,30 @@
 
-<div class="container p-3">
+<% flash.each do |type, msg| %>
+  <div class="toast" data-autohide="false">
+      <div class="toast-header text-danger">
+        <i class="fas fa-exclamation-circle"></i>  <strong class="mr-auto"><%= msg %></strong>
+        <small class="text-muted">Just now</small>
+         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Please check your details
+      </div>
+    </div>
+<% end %>
 
+<% if current_user %>
+<div class="container p-3">
+    <div class="row">
+      <div class="col-11 col-md-6 col-lg-8 signup-box align-self-start m-auto">
+      <img class="d-flex text-center m-auto" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.qierge.com%2Fimages%2Ferror404.png&f=1&nofb=1s" width="50%"/>
+        <h2 class="text-center m-4">You are logged in</h2>
+        <h3 class="text-center m-4">Do you want to create another accout? <br>Please <a href="<%= logout_path %>" class="links">log out</a> first!</h3>
+        <h3 class="text-center m-4">Or go to the <a href="/posts" class="links">home page </a></h3>
+      </div>
+    </div>
+  </div>
+<% else %>
+<div class="container p-3">
   <div class="row">
     <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
       <h2>Acebook helps you connect with the world</h2>
@@ -8,16 +32,18 @@
       <div class="d-flex flex-column">
         <div class="post d-flex flex-row">
           <div class="post-img">
-              <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+              <img alt="Logo" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTk2OGU4NzktODhhOC00Nzc2LWIyNzYtOWViMjljZGFiNTMxXkEyXkFqcGdeQXVyMTE1NTQwOTk@._V1_UY256_CR12,0,172,256_AL_.jpg" class="profile-img">
           </div>
           <div class="post-content  d-flex flex-column">
-            <p class="post-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"</p>
+            <p class="post-text">"All my friends are now connecting to acebook"</p>
             <span class="post-date align-self-end">Posted by Ian one day ago</span>
+            <hr>
+            <span><i class="fas fa-thumbs-up"></i> Like</span>
           </div>
         </div>
         <div class="post d-flex flex-row">
           <div class="post-img">
-              <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+              <img alt="Logo" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg" class="profile-img">
           </div>
           <div class="post-content  d-flex flex-column">
             <p class="post-text">Hey guys, Just joined acebook! It's the best</p>
@@ -37,11 +63,8 @@
 
     </div>
     <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
-    <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+    
+   
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <a class="nav-link active" id="signup-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h2 class="text-center">Sign up</h2></a>
@@ -83,3 +106,4 @@
     </div>
   </div>
 </div>
+<% end %>
