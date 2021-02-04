@@ -365,6 +365,16 @@ a {
   display: inline-block;
 }
 
+.logo>a, .slogan>a {
+  text-decoration: none !important;
+  color: white;
+}
+
+.logo>a:hover, .slogan>a:hover {
+  text-decoration: none !important;
+  color: #99cafb;
+}
+
 .slogan {
   color: white;
   text-align: center;
