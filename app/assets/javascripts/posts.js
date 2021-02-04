@@ -1,81 +1,62 @@
  document.onload = getAllPosts();
-  
-  function getAllPosts() {
-    fetch('http://localhost:3000/api/v1/posts')
-      .then(response => response.json())
-      .then(data => renderPost(data));
-  }
+
+ function getAllPosts() {
+   fetch('http://localhost:3000/api/v1/posts')
+     .then(response => response.json())
+     .then(data => renderPost(data));
+ }
 
 
-function getPostData(message,callback){ 
-    fetch('http://localhost:3000/api/v1/posts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-     },
-      body: JSON.stringify({
-        "message": `${message}`
-       
-      })
-      
-    })
-    .then(function() { 
-      getAllPosts() })
-}
+ function getPostData(message, callback) {
+   fetch('http://localhost:3000/api/v1/posts', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify({
+         "message": `${message}`
 
-document.getElementById('send-button').addEventListener("click",function(event) {
-  event.preventDefault()
-  var message = document.getElementById('postBox').value
-  getPostData(message,getAllPosts)
-  
-})
-   
-    function renderPost(data){
-      var x  = document.getElementById('posts');
-      data.forEach(function(post){
-        postHTML = ` <div class="post d-flex flex-row">
-        <div class="post-img">
-          <img width="50" src="/assets/user-15fbbe4568b83583cb622a4031c60064abd0274ab0039ab8e8161eef78cf4a4e.png" alt="User">
-        </div>
-        <div class="post-content  d-flex flex-column">
-          <p class="post-text">${post.message}</p>
-          <span class="post-date align-self-end">Posted by <span class="username"> ${post.user.username} </span> at
-               ${post.created_at} </span>
-            <div id="like-button"> </div>
-        </div>
-      </div>`
-      x.insertAdjacentHTML('afterend', postHTML); 
-      renderLikeButton();
-      });
-  };
+       })
 
-  function renderLikeButton() {
-    const e = React.createElement;
+     })
+     .then(function () {
+       getAllPosts()
+     })
+ }
 
-    class LikeButton extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = { liked: false };
-      }
+ document.getElementById('send-button').addEventListener("click", function (event) {
+   event.preventDefault()
+   var message = document.getElementById('postBox').value
+   getPostData(message, getAllPosts)
 
-      render() {
-        return e(
-          'button',
-          { onClick: () => this.setState( {liked: !this.state.liked} ) },
-          
-          this.state.liked ? 'unlike' : 'like' 
-        );
-      }
-    }
-    const domContainer = document.querySelector('#like-button');
-    ReactDOM.render(e(LikeButton), domContainer);
-  }
+ })
 
-    function renderPost(data) {
+ //   function renderPost(data){
+ //     var x  = document.getElementById('posts');
+ //     data.forEach(function(post){
+ //       postHTML = ` <div class="post d-flex flex-row">
+ //       <div class="post-img">
+ //         <img width="50" src="/assets/user-15fbbe4568b83583cb622a4031c60064abd0274ab0039ab8e8161eef78cf4a4e.png" alt="User">
+ //       </div>
+ //       <div class="post-content  d-flex flex-column">
+ //         <p class="post-text">${post.message}</p>
+ //         <span class="post-date align-self-end">Posted by <span class="username"> ${post.user.username} </span> at
+ //              ${post.created_at} </span>
+ //           <div id="like-button"> </div>
+ //       </div>
+ //     </div>`
+ //     x.insertAdjacentHTML('afterend', postHTML); 
+ //     renderLikeButton();
+ //     });
+ // };
 
-      var x = document.getElementById('posts');
-      data.forEach(function (post) {
-        postHTML = `
+
+
+ function renderPost(data) {
+
+   var x = document.getElementById('posts');
+   data.forEach(function (post) {
+     postHTML = `
         <div class="post d-flex flex-row">
           <div class="post-img">
             <img width="50" src="/assets/user-15fbbe4568b83583cb622a4031c60064abd0274ab0039ab8e8161eef78cf4a4e.png" alt="User">
@@ -90,22 +71,54 @@ document.getElementById('send-button').addEventListener("click",function(event) 
             </div>
             <div class="post-content  d-flex flex-column">
               <p class="post-text">${post.message}</p>
-              <span class="post-date align-self-end">
-                  ${post.created_at}</span>
             </div>
+            <div class="post-content d-flex flex-row">
+                <span id="like-button"></span>
+                <a rel="noopener" href="https://twitter.com/intent/tweet?text=${post.user.username}+posted+this:+*${post.message}*+%20%40acebookJAANIS%20https://acebook-jaanis.herokuapp.com%2F%20&original_referer=https://clicktotweet.com&related=clicktotweet" title="Share on Twitter" target="_blank" class="share mx-1"><i class="fab fa-twitter"></i></a>
+                <a rel="noopener" href="https://www.facebook.com/sharer.php?u=https://acebook-jaanis.herokuapp.com/posts/${post.id}" title="Share on Facebok" target="_blank" class="share mx-1"><i class="fab fa-facebook-square" ></i></a>
+                <a rel="noopener" href="https://api.whatsapp.com/send?text=${post.user.username}+posted+this:+*${post.message}*+on+https://acebook-jaanis.herokuapp.com/" title="Share on Whatsapp" target="_blank" class="share mx-1"><i class="fab fa-whatsapp"></i></a>
+                <span class="post-date align-self-end mx-1">${post.created_at}</span>
+              </div>
           </div>
         </div>`
-        x.insertAdjacentHTML('afterend', postHTML);
-        optionsPost()
-      });
-    };
+     x.insertAdjacentHTML('afterend', postHTML);
+     renderLikeButton();
+     optionsPost()
+   });
+ };
 
-    function optionsPost() {
-      var name = document.getElementById("username").innerHTML;
-      var namepost = document.getElementById("username_post").innerHTML;
-      if (name !== namepost) {
-        var linkDel = document.getElementById("userOptions");
-        linkDel.remove();
-      }
-    }
+ function renderLikeButton() {
+   const e = React.createElement;
 
+   class LikeButton extends React.Component {
+     constructor(props) {
+       super(props);
+       this.state = {
+         liked: false
+       };
+     }
+
+     render() {
+       return e(
+         'button', {
+           onClick: () => this.setState({
+             liked: !this.state.liked
+           })
+         },
+
+         this.state.liked ? 'unlike' : 'like'
+       );
+     }
+   }
+   const domContainer = document.querySelector('#like-button');
+   ReactDOM.render(e(LikeButton), domContainer);
+ }
+
+ function optionsPost() {
+   var name = document.getElementById("username").innerHTML;
+   var namepost = document.getElementById("username_post").innerHTML;
+   if (name !== namepost) {
+     var linkDel = document.getElementById("userOptions");
+     linkDel.remove();
+   }
+ }

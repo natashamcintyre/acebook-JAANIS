@@ -82,8 +82,10 @@ header {
 }
 
 .post-date {
-  color: gray;
+  color: #99cafb;
   font-style: italic;
+  right: 230px;
+  position: absolute;
 }
 
 
@@ -231,6 +233,7 @@ h3 {
 
 }
 
+.close,
 .button:focus {
   outline: none !important;
 
@@ -460,4 +463,18 @@ footer {
 
 .nav-link>h2 {
   color: #80808073 !important;
+}
+
+#like-button>button,
+.share {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+
+#like-button>button:hover,
+.share:hover {
+  color: #99cafb;
 }
