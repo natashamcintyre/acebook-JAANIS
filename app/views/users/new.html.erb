@@ -1,19 +1,4 @@
 
-<% flash.each do |type, msg| %>
-  <div class="toast" data-autohide="false">
-      <div class="toast-header text-danger">
-        <i class="fas fa-exclamation-circle"></i>  <strong class="mr-auto"><%= msg %></strong>
-        <small class="text-muted">Just now</small>
-         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-      </div>
-      <div class="toast-body">
-        Add your details to login or create a new account
-      </div>
-    </div>
-<% end %>
-
 <% if current_user %>
 <div class="container p-3">
     <div class="row">
@@ -34,31 +19,62 @@
       <div class="d-flex flex-column">
         <div class="post d-flex flex-row">
           <div class="post-img">
-              <img alt="Logo" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTk2OGU4NzktODhhOC00Nzc2LWIyNzYtOWViMjljZGFiNTMxXkEyXkFqcGdeQXVyMTE1NTQwOTk@._V1_UY256_CR12,0,172,256_AL_.jpg" class="profile-img">
+            <img class="profile-img" width="50" src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200" alt="User">
           </div>
           <div class="post-content  d-flex flex-column">
-            <p class="post-text">"All my friends are now connecting to acebook"</p>
-            <span class="post-date align-self-end">Posted by Ian one day ago</span>
-            <hr>
-            <span><i class="fas fa-thumbs-up"></i> Like</span>
+            <div class="d-flex justify-content-between">
+              <span id ="username_post">Fernanda</span>
+            </div>
+            <div class="post-content  d-flex flex-column">
+              <p class="post-text">Now with acebook jaanis I can connect with all my friends!!!</p>
+            </div>
+            <div class="post-content d-flex flex-row">
+              <span class="share mb-2">Like</span>
+              <i class="fab fa-twitter share m-1"></i>
+              <i class="fab fa-facebook-square share m-1" ></i>
+              <i class="fab fa-whatsapp share m-1"></i>
+              <span class="post-date align-self-end mb-2 ml-4">04/02/20201 - 22:06</span>
+              </div>
           </div>
         </div>
         <div class="post d-flex flex-row">
           <div class="post-img">
-              <img alt="Logo" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg" class="profile-img">
+            <img class="profile-img" width="50" src="https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200" alt="User">
           </div>
           <div class="post-content  d-flex flex-column">
-            <p class="post-text">Hey guys, Just joined acebook! It's the best</p>
-            <span class="post-date align-self-end">Posted by Aman187 two days ago</span>
+            <div class="d-flex justify-content-between">
+              <span id ="username_post">Smith</span>
+            </div>
+            <div class="post-content  d-flex flex-column">
+              <p class="post-text">acebook jaanis is the best app ever</p>
+            </div>
+            <div class="post-content d-flex flex-row">
+              <span class="share mb-2">Like</span>
+              <i class="fab fa-twitter share m-1"></i>
+              <i class="fab fa-facebook-square share m-1" ></i>
+              <i class="fab fa-whatsapp share m-1"></i>
+              <span class="post-date align-self-end mb-2 ml-4"">01/02/20201 -02:28</span>
+              </div>
           </div>
         </div>
         <div class="post d-flex flex-row">
           <div class="post-img">
-              <img alt="Logo" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_24787.png&f=1&nofb=1" class="profile-img">
+            <img class="profile-img" width="50" src="https://images.pexels.com/photos/594421/pexels-photo-594421.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb" alt="User">
           </div>
           <div class="post-content  d-flex flex-column">
-            <p class="post-text">Hey guys, I'm so good at coding it's mad!</p>
-            <span class="post-date align-self-end">Posted by Aman187 two days ago</span>
+            <div class="d-flex justify-content-between">
+              <span id ="username_post">Holly</span>
+            </div>
+            <div class="post-content  d-flex flex-column">
+              <p class="post-text">I can see what my friends are doing right now!</p>
+            </div>
+            <div class="post-content d-flex flex-row">
+              <span class="share mb-2">Like</span>
+              <i class="fab fa-twitter share m-1"></i>
+              <i class="fab fa-facebook-square share m-1" ></i>
+              <i class="fab fa-whatsapp share m-1"></i>
+              <span class="post-date align-self-end mb-2 ml-4"">25/01/2021 - 12:52</span>
+              </div>
           </div>
         </div>
       </div>

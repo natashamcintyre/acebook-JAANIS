@@ -46,6 +46,21 @@
         </div>
       <% end %>
     </header>
+
+    <% flash.each do |type, msg| %>
+      <div class="toast" data-autohide="false">
+          <div class="toast-header text-danger">
+            <i class="fas fa-exclamation-circle"></i>  <strong class="mr-auto"><%= msg %></strong>
+            <small class="text-muted">Just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+          </div>
+          <div class="toast-body">
+            Add your details to login or create a new account
+          </div>
+        </div>
+    <% end %>
     <%= yield %>
     <footer class="mt-5 pt-5 text-muted text-center text-small">
         <p> acebook J A A N I S &copy; 2021</p>

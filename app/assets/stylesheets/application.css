@@ -79,13 +79,12 @@ header {
   font-weight: 200;
   word-break: break-word;
   letter-spacing: 1px;
+  word-break: break-word !important;
 }
 
 .post-date {
   color: #99cafb;
   font-style: italic;
-  right: 230px;
-  position: absolute;
 }
 
 
