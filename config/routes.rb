@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "users#new"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # resources :users
@@ -21,7 +20,6 @@ Rails.application.routes.draw do
   get "error", to: "users#error"
   get "*path", to: redirect("/error")
 end
-
 
 # PostsController
 # GET /posts#index (returns html+js for the view of the posts page)
