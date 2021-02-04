@@ -12,16 +12,24 @@
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <%= javascript_include_tag "https://unpkg.com/react@17/umd/react.development.js" %>
-    <%= javascript_include_tag "https://unpkg.com/react-dom@17/umd/react-dom.development.js" %> 
+    <%= javascript_include_tag "https://unpkg.com/react-dom@17/umd/react-dom.development.js" %>
   </head>
 
   <body>
 
     <header class="d-flex flex-row flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
-      <div class="d-flex flex-column my-0 title">
+      <% if current_user %>
+        <div class="d-flex flex-column my-0 title">
+          <%= link_to 'posts' do %>
+            <p class="h1 logo">acebook</p>
+            <p class="align-self-end slogan">J A N N I S</p>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="d-flex flex-column my-0 title">
         <p class="h1 logo">acebook</p>
         <p class="align-self-end slogan">J A N N I S</p>
-      </div>
+      <% end %>
       <% if current_user %>
         <div class="dropdown">
           <button onclick="myFunction()" class="button dropdown-btn"><i class="fas fa-user"></i> <%= current_user.username %></button>
@@ -88,7 +96,7 @@
           }
         }
       }
-      
+
     </script>
   </body>
 </html>
