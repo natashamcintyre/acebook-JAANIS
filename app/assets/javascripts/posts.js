@@ -1,9 +1,12 @@
+ document.onload = getAllPosts();
+  
+  function getAllPosts() {
     fetch('http://localhost:3000/api/v1/posts')
       .then(response => response.json())
       .then(data => renderPost(data));
+  }
 
-function getPostData(message){
-  console.log("im in this function")
+function getPostData(message,callback){ 
     fetch('http://localhost:3000/api/v1/posts', {
       method: 'POST',
       headers: {
@@ -13,14 +16,17 @@ function getPostData(message){
         "message": `${message}`
        
       })
+      
     })
-    console.log(message)
+    .then(function() { 
+      getAllPosts() })
 }
 
 document.getElementById('send-button').addEventListener("click",function(event) {
   event.preventDefault()
   var message = document.getElementById('postBox').value
-  getPostData(message)
+  getPostData(message,getAllPosts)
+  
 })
    
     function renderPost(data){
@@ -52,8 +58,6 @@ document.getElementById('send-button').addEventListener("click",function(event) 
       }
 
       render() {
-        console.log(this.state.liked)
-        console.log(!(this.state.liked))
         return e(
           'button',
           { onClick: () => this.setState( {liked: !this.state.liked} ) },
