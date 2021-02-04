@@ -227,6 +227,12 @@ h3 {
 .button:hover {
   color: #3C5898;
   background-color: white;
+  outline: none !important;
+
+}
+
+.button:focus {
+  outline: none !important;
 
 }
 

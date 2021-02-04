@@ -32,7 +32,9 @@
             <p class="align-self-end slogan"><a href='posts' >J A A N I S</a></p>
         </div>
         <div class="dropdown">
-          <button onclick="myFunction()" class="button dropdown-btn"><i class="fas fa-user"></i> <span id="username"><%= current_user.username %></span></button>
+          <button onclick="myFunction()" class="dropdown-btn button ">
+          <i class="fas fa-user"></i> <span id="username"><%= current_user.username %></span>
+          </button>
           <div id="myDropdown" class="dropdown-content">
             <a href="<%= logout_path %>"><i class="fas fa-sign-out-alt"></i> Log Out</a>
           </div>
