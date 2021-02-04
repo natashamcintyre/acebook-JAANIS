@@ -31,14 +31,13 @@
       }
 
       render() {
-        if (this.state.liked) {
-          return 'You liked this.';
-        }
-
+        console.log(this.state.liked)
+        console.log(!(this.state.liked))
         return e(
           'button',
-          { onClick: () => this.setState({ liked: true }) },
-          'Like'
+          { onClick: () => this.setState( {liked: !this.state.liked} ) },
+          
+          this.state.liked ? 'unlike' : 'like' 
         );
       }
     }
