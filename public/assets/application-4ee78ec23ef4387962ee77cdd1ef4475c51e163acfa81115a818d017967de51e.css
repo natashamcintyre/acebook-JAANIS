@@ -10,9 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
@@ -464,7 +465,7 @@ footer {
   color: #80808073 !important;
 }
 
-.like-button>button,
+#like-button>button,
 .share {
   background-color: transparent;
   border: none;
@@ -473,11 +474,7 @@ footer {
   outline: none;
 }
 
-.like-button>button {
-  min-width: 70px;
-}
-
-.like-button>button:hover,
+#like-button>button:hover,
 .share:hover {
   color: #99cafb;
 }
@@ -489,8 +486,3 @@ footer {
   display: flex !important;
   justify-content: space-between;
 }
-
-.update {
-  border-radius: 10px;
-}
-
