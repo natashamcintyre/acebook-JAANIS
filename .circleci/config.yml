@@ -1,6 +1,4 @@
- version: 2.5
-orbs:
-  ruby: circleci/ruby@0.1.2
+
 
 jobs:
   build:
