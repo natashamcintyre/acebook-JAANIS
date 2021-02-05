@@ -11,6 +11,6 @@ jobs:
           name: install gems
           command: ruby/bundle-install
       - run:
-        name: Database setup
-        command: bundle exec rails db:schema:load --trace
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
       - ruby/rspec-test
