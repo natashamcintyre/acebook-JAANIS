@@ -118,3 +118,4 @@
      linkDel.remove();
    }
  }
+;
