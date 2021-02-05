@@ -1,6 +1,4 @@
-version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2
+
 
 jobs:
   build:
@@ -10,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: install gems
+          command: ruby/bundle-install
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+      - ruby/rspec
