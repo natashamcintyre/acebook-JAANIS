@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/acebook-JAANIS
     docker:
-      - image: circleci/ruby:2.5.0
+      - image: circleci/ruby:2.6.3-stretch-node
         environment:
           PGHOST: localhost
           PGUSER: acebook-JAANIS
