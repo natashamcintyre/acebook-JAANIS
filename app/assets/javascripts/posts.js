@@ -1,7 +1,7 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('https://acebook-jaanis.herokuapp.com/api/v1/posts', {
+   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
      mode: 'no-cors'
    })
      .then(response => response.json())
@@ -10,7 +10,7 @@
 
 
  function getPostData(message, callback) {
-   fetch('https://acebook-jaanis.herokuapp.com/api/v1/posts', {
+   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
        method: 'POST',
        mode: 'no-cors',
        headers: {
