@@ -1,14 +1,14 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('http://localhost:8080/http://localhost:3000/api/v1/posts')
+   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts')
      .then(response => response.json())
      .then(data => renderPost(data));
  }
 
 
  function getPostData(message, callback) {
-   fetch('http://localhost:8080/http://localhost:3000/api/v1/posts', {
+   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
