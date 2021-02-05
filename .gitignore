@@ -28,3 +28,5 @@ coverage/*
 /acebook-jaanis*
 
 # Ignore encrypted secrets key file.
+secrets.yml
+config/master.key
