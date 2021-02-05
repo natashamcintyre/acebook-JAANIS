@@ -1,14 +1,14 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts')
+   fetch('https://cors-anywhere.herokuapp.com/https://acebook-jaanis-2.herokuapp.com/api/v1/posts')
      .then(response => response.json())
      .then(data => renderPost(data));
  }
 
 
  function getPostData(message, callback) {
-   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
+   fetch('https://cors-anywhere.herokuapp.com/https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',

@@ -1,7 +1,9 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts')
+   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
+     
+   })
      .then(response => response.json())
      .then(data => renderPost(data));
  }
