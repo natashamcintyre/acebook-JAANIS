@@ -7,7 +7,7 @@
  }
 
 
- function getPostData(message, callback) {
+ function getPostData(message) {
    fetch('http://localhost:3000/api/v1/posts', {
        method: 'POST',
        headers: {
@@ -27,9 +27,22 @@
  document.getElementById('send-button').addEventListener("click", function (event) {
    event.preventDefault()
    var message = document.getElementById('postBox').value
-   getPostData(message, getAllPosts)
+   getPostData(message)
 
  })
+
+function addDeleteListener(id) {
+  document.getElementById(`delete-${id}`).addEventListener("click", function (event) {
+    event.preventDefault()
+    fetch(`http://localhost:3000/api/v1/posts/${id}`, {
+      method: 'DELETE',
+    })
+    .then(function () {
+      getAllPosts()
+    })
+  })
+}
+
 
  function renderPost(data) {
    let postsDiv = document.getElementById('posts');
@@ -42,6 +55,7 @@
      postsDiv.appendChild(postDiv);
      renderLikeButton(index);
      optionsPost(index);
+     addDeleteListener(post.id)
    })
  }
 
@@ -60,7 +74,7 @@
       <span class="user-post" id ="username_post">${post.user.username}</span>
       <div id="userOptions${index}">
         <a href="/posts/${post.id}/edit" class="edit"><i class="fas fa-pencil-alt mx-1"></i></a>
-        <a href="/posts/${post.id}" rel="nofollow" data-method="delete" class="delete"><i class="fas fa-trash-alt"></i></a>
+        <a href="/posts/${post.id}" rel="nofollow" id='delete-${post.id}' class="delete"><i class="fas fa-trash-alt"></i></a>
       </div>
     </div>
     <div class="post-content  d-flex flex-column">
@@ -105,12 +119,8 @@
 
  function optionsPost(index) {
    var name = document.getElementById("username").innerHTML;
-   console.log(`Name from id=username is ${name}`)
    var namepost = document.getElementsByClassName("user-post")[index].innerHTML;
-   console.log(`Namepost from classname user-post at index ${index} is ${namepost}`)
-   console.log(`Is ${name} different from ${namepost}? ${name !== namepost}`)
    if (name !== namepost) {
-     console.log(`I HAVE DECIDED THAT THE NAMES ARE DIFFERENT SO I AM IN THE IF!`)
      var linkDel = document.getElementById(`userOptions${index}`);
      linkDel.remove();
    }
