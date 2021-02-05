@@ -9,6 +9,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
@@ -17,6 +18,7 @@ Rails.application.configure do
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
   # `config/secrets.yml.key`.
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
   config.read_encrypted_secrets = true
 
   # Disable serving static files from the `/public` folder by default since
