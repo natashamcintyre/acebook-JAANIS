@@ -1,7 +1,9 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('http://localhost:3000/api/v1/posts')
+   fetch('http://localhost:3000/api/v1/posts', {
+    mode: 'no-cors'
+   })
      .then(response => response.json())
      .then(data => renderPost(data));
  }
