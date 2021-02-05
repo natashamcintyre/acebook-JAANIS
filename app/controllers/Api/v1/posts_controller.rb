@@ -8,9 +8,9 @@ module Api
       # end
 
       def index
-        posts = Post.joins(:user).order('created_at')
+        posts = Post.joins(:user).order('created_at DESC')
         data = ActiveModel::Serializer::CollectionSerializer.new(posts, each_serializer: PostSerializer)
-        
+
         render json: data
       end
 
@@ -26,7 +26,7 @@ module Api
         # @post = @user.posts.create(post_params)
         # redirect_to posts_url
 
-        
+
       end
 
       def destroy
