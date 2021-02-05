@@ -25,32 +25,7 @@ class PostsController < ApplicationController
     @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
-#
 
-#
-#   def update
-#     if @post.update(post_params)
-#       redirect_to(@post.post)
-#     else
-#       render action: “edit”
-#     end
-#   end
-#
-#   private
-#
-#   def post_params
-#     params.require(:post).permit(:message, :created_at, :post_id)
-#   end
-
-
-  def destroy
-    @post.destroy
-    respond_to do |format|
-      format.js
-      format.html { redirect_to posts_url}
-      format.json { head :no_content }
-    end
-  end
 
   private
 
