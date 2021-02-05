@@ -13,7 +13,6 @@ jobs:
         environment:
           POSTGRES_USER: acebook-JAANIS
           POSTGRES_DB: acebook-JAANIS_test
-          POSTGRES_PASSWORD: ""
     steps:
       - checkout
 
