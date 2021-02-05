@@ -477,3 +477,11 @@ footer {
 .share:hover {
   color: #99cafb;
 }
+
+.sharing {
+  border-top: 1px solid gray;
+  padding-top: 5px;
+  padding-bottom: 0px !important;
+  display: flex !important;
+  justify-content: space-between;
+}

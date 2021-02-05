@@ -72,12 +72,12 @@
             <div class="post-content  d-flex flex-column">
               <p class="post-text">${post.message}</p>
             </div>
-            <div class="post-content d-flex flex-row">
+            <div class="post-content d-flex flex-row sharing">
                 <span id="like-button"></span>
-                <a rel="noopener" href="https://twitter.com/intent/tweet?text=${post.user.username}+posted+this:+*${post.message}*+%20%40acebookJAANIS%20https://acebook-jaanis.herokuapp.com%2F%20&original_referer=https://clicktotweet.com&related=clicktotweet" title="Share on Twitter" target="_blank" class="share mx-1"><i class="fab fa-twitter"></i></a>
-                <a rel="noopener" href="https://www.facebook.com/sharer.php?u=https://acebook-jaanis.herokuapp.com/posts/${post.id}" title="Share on Facebok" target="_blank" class="share mx-1"><i class="fab fa-facebook-square" ></i></a>
-                <a rel="noopener" href="https://api.whatsapp.com/send?text=${post.user.username}+posted+this:+*${post.message}*+on+https://acebook-jaanis.herokuapp.com/" title="Share on Whatsapp" target="_blank" class="share mx-1"><i class="fab fa-whatsapp"></i></a>
-                <span class="post-date align-self-end mx-1 ml-5">${post.created_at}</span>
+                <a rel="noopener" href="https://twitter.com/intent/tweet?text=${post.user.username}+posted+this:+*${post.message}*+%20%40acebookJAANIS%20https://acebook-jaanis.herokuapp.com%2F%20&original_referer=https://clicktotweet.com&related=clicktotweet" title="Share on Twitter" target="_blank" class="share"><i class="fab fa-twitter"></i></a>
+                <a rel="noopener" href="https://www.facebook.com/sharer.php?u=https://acebook-jaanis.herokuapp.com/posts/${post.id}" title="Share on Facebok" target="_blank" class="share"><i class="fab fa-facebook-square" ></i></a>
+                <a rel="noopener" href="https://api.whatsapp.com/send?text=${post.user.username}+posted+this:+*${post.message}*+on+https://acebook-jaanis.herokuapp.com/" title="Share on Whatsapp" target="_blank" class="share"><i class="fab fa-whatsapp"></i></a>
+                <span class="post-date align-self-end ml-5">${post.created_at}</span>
               </div>
           </div>
         </div>`
@@ -106,7 +106,7 @@
            })
          },
 
-         this.state.liked ? 'unlike' : 'like'
+         this.state.liked ? 'Unlike' : 'Like'
        );
      }
    }
