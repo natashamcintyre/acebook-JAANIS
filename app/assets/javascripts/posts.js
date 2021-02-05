@@ -76,16 +76,6 @@
     postDiv.appendChild(contentDiv);
  }
 
- //
- //
- //     postHTML =
- //
- //     postDiv.insertAdjacentHTML('afterend', postHTML);
- //     renderLikeButton();
- //     optionsPost();
- //   });
- // };
-
  function renderLikeButton(index) {
    const e = React.createElement;
 
