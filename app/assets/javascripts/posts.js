@@ -1,18 +1,15 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('http://localhost:3000/api/v1/posts', {
-    mode: 'no-cors'
-   })
+   fetch('http://localhost:8080/http://localhost:3000/api/v1/posts')
      .then(response => response.json())
      .then(data => renderPost(data));
  }
 
 
  function getPostData(message, callback) {
-   fetch('http://localhost:3000/api/v1/posts', {
+   fetch('http://localhost:8080/http://localhost:3000/api/v1/posts', {
        method: 'POST',
-       mode: 'no-cors',
        headers: {
          'Content-Type': 'application/json',
        },
