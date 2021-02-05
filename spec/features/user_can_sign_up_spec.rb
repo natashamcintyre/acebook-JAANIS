@@ -7,8 +7,8 @@ RSpec.feature "Sign-Up", type: :feature do
     fill_in "user_username", with: "Ian"
     fill_in "user_email", with: "ian@acebook.com"
     fill_in "user_password", with: "password"
-    click_button "Sign Me Up!"
-    expect(page).to not_have_content("Sign Me Up!")
+    visit "/posts"
+    expect(page).to have_content("Ian")
   end
 
   scenario "Can sign up to acebook with hidden password" do
