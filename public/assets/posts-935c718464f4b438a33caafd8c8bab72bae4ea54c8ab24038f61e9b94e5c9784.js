@@ -6,7 +6,6 @@
      .then(data => renderPost(data));
  }
 
-
  function getPostData(message, callback) {
    fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
        method: 'POST',
