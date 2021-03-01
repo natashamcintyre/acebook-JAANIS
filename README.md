@@ -1,5 +1,12 @@
-# AceBook
-by JAANIS
+# AceBook JAANIS
+
+### Screenshots
+
+<img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/signup-screenshot.png">
+<img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/login-screenshot.png">
+<img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/posts-screenshot.png">
+
+### Project
 
 1. [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
@@ -10,10 +17,10 @@ REQUIRED INSTRUCTIONS:
 
 2. [The card wall is here.](https://trello.com/b/mU9Va6vg/team)
 
-## How to contribute to this project
+### How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Quickstart
+### Quickstart
 First, clone this repository. Then:
 
 ```bash
@@ -24,8 +31,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
-##
-=======
+
 ### User Stories
 
 **User Sign Up:**
