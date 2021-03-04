@@ -2,15 +2,15 @@
 
  function getAllPosts() {
    fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
-     mode: 'no-cors'
-   })
+       mode: 'no-cors'
+     })
      .then(response => response.json())
      .then(data => renderPost(data));
  }
 
 
  function getPostData(message) {
-   fetch('http://localhost:3000/api/v1/posts', {
+   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
        method: 'POST',
        mode: 'no-cors',
        headers: {
@@ -34,17 +34,18 @@
 
  })
 
-function addDeleteListener(id) {
-  document.getElementById(`delete-${id}`).addEventListener("click", function (event) {
-    event.preventDefault()
-    fetch(`http://localhost:3000/api/v1/posts/${id}`, {
-      method: 'DELETE',
-    })
-    .then(function () {
-      getAllPosts()
-    })
-  })
-}
+ function addDeleteListener(id) {
+   document.getElementById(`delete-${id}`).addEventListener("click", function (event) {
+     event.preventDefault()
+     fetch(`https://acebook-jaanis-2.herokuapp.com/api/v1/posts/${id}`, {
+         method: 'DELETE',
+         mode: 'no-cors',
+       })
+       .then(function () {
+         getAllPosts()
+       })
+   })
+ }
 
 
  function renderPost(data) {
@@ -73,7 +74,7 @@ function addDeleteListener(id) {
    let contentDiv = document.createElement('div');
    contentDiv.className = "post-content  d-flex flex-column";
    contentDiv.innerHTML =
-    `<div class="d-flex justify-content-between">
+     `<div class="d-flex justify-content-between">
       <span class="user-post" id ="username_post">${post.user.username}</span>
       <div id="userOptions${index}">
         <a href="/posts/${post.id}/edit" class="edit"><i class="fas fa-pencil-alt mx-1"></i></a>
@@ -90,7 +91,7 @@ function addDeleteListener(id) {
       <a rel="noopener" href="https://api.whatsapp.com/send?text=${post.user.username}+posted+this:+*${post.message}*+on+https://acebook-jaanis.herokuapp.com/" title="Share on Whatsapp" target="_blank" class="share"><i class="fab fa-whatsapp"></i></a>
       <span class="post-date align-self-end ml-5">${post.created_at}</span>
     </div>`;
-    postDiv.appendChild(contentDiv);
+   postDiv.appendChild(contentDiv);
  }
 
  function renderLikeButton(index) {
