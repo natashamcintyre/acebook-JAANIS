@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative "../helpers/feature_helpers.rb"
+require_relative '../helpers/feature_helpers'
 
 RSpec.feature "Sign-Up", type: :feature do
   scenario "Can sign up to acebook" do
@@ -16,7 +16,7 @@ RSpec.feature "Sign-Up", type: :feature do
     fill_in "user_username", with: "Ian"
     fill_in "user_email", with: "ian@acebook.com"
     fill_in "user_password", with: "hidden"
-    expect(page).to_not have_content("hidden")
+    expect(page).not_to have_content("hidden")
   end
 
   scenario "User cannot sign up if username is duplicated" do

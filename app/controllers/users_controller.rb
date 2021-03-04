@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    p @user
     if @user.save
       session[:user_id] = @user.id
       redirect_to posts_url
@@ -23,8 +22,6 @@ class UsersController < ApplicationController
 
   def home
   end
-
-  private
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

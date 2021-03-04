@@ -2,7 +2,7 @@ module Api
   module V1
     class PostsController < ApplicationController
       protect_from_forgery with: :null_session
-      skip_before_action :verify_authenticity_token, :only => [:create]
+      skip_before_action :verify_authenticity_token, only: [:create]
       # def new
       #   @post = Post.new
       # end
@@ -25,8 +25,6 @@ module Api
         # end
         # @post = @user.posts.create(post_params)
         # redirect_to posts_url
-
-
       end
 
       def destroy
@@ -35,7 +33,7 @@ module Api
         if post.destroy
           head :no_content
         else
-          render json: { error: post.errors.messages}, status: 422
+          render json: { error: post.errors.messages }, status: :unprocessable_entity
         end
       end
 
@@ -46,9 +44,8 @@ module Api
       end
 
       def options
-        @options ||= {include: %i[user]}
+        @options ||= { include: %i[user] }
       end
-
     end
   end
 end
