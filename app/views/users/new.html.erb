@@ -1,5 +1,5 @@
 
-<% if current_user %>
+<%# <% if current_user %> %>
 <div class="container p-3">
     <div class="row">
       <div class="col-11 col-md-6 col-lg-8 signup-box align-self-start m-auto">
@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-<% else %>
+<%# <% else %> %>
 <div class="container p-3">
   <div class="row">
     <div class="col-lg-7 col-md-6 d-none d-md-block d-lg-block ">
@@ -81,8 +81,8 @@
 
     </div>
     <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
-    
-   
+
+
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <a class="nav-link active" id="signup-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h2 class="text-center">Sign up</h2></a>
@@ -124,5 +124,5 @@
     </div>
   </div>
 </div>
-<% end %>
+<%# <% end %> %>
 <%= javascript_include_tag('users.js') %>
