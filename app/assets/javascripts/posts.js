@@ -8,7 +8,11 @@
      .then(function(response) {
        response.json()
      })
-     .then(data => renderPost(data));
+     .then(function(data) {
+       console.log(`data is`)
+       console.log(data)
+       renderPost(data)
+     })
  }
 
 
