@@ -25,7 +25,7 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: "Hello, user" } }
       user = User.find_by(username: "Natasha")
       post = Post.find_by(message: "Hello, user")
-      expect(post.user_id).to eq (user.id)
+      expect(post.user_id).to eq(user.id)
     end
   end
 

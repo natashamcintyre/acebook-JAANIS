@@ -30,7 +30,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'rails_12factor'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,7 +40,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.13"
 
-  gem "rspec-rails", "~> 3.5"
+  gem "rspec-rails", "~> 4.0.2"
 
   gem "rubocop", "~> 1.8", require: false
   gem "rubocop-rails", require: false

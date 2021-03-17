@@ -26,9 +26,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-
   private
-
 
   def set_post
     @post = Post.find_by(id: params[:id])
@@ -37,5 +35,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :created_at, :post_id)
   end
-
 end

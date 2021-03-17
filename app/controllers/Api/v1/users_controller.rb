@@ -9,9 +9,8 @@ module Api
         data = ActiveModel::Serializer::CollectionSerializer.new(users, each_serializer: UserSerializer)
         render json: data
       end
-      def username
-        
-      end
+
+      def username; end
 
       def create
         user = User.new(user_params)
@@ -19,7 +18,7 @@ module Api
         if user.save
           render json: UserSerializer.new(user).serialized_json
         else
-          render json: { error: user.errors.messages }, status: 422
+          render json: { error: user.errors.messages }, status: :unprocessable_entity
         end
         # @user = User.create(user_params)
         # redirect_to login_url, notice: "You have successfully signed up to Acebook!"

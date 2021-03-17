@@ -2,11 +2,14 @@
 
  function getAllPosts() {
    console.log(`fetching posts`)
-   fetch('https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts', {
-     mode: 'no-cors'
+   fetch('/api/v1/posts', {
+
    })
      .then(function(response) {
-       response.json()
+       console.log(response)
+       result = response.json()
+       console.log(result)
+       return result
      })
      .then(function(data) {
        console.log(`data is`)
@@ -18,9 +21,9 @@
 
  function getPostData(message) {
    console.log(`submitting post`)
-   fetch('https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts', {
+   fetch('/api/v1/posts', {
        method: 'POST',
-       mode: 'no-cors',
+
        headers: {
          'Content-Type': 'application/json',
        },
@@ -44,7 +47,7 @@
 function addDeleteListener(id) {
   document.getElementById(`delete-${id}`).addEventListener("click", function (event) {
     event.preventDefault()
-    fetch(`https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts/${id}`, {
+    fetch(`/api/v1/posts/${id}`, {
       method: 'DELETE',
     })
     .then(function () {
@@ -64,8 +67,8 @@ function addDeleteListener(id) {
      renderPostContent(post, postDiv, index);
      postsDiv.appendChild(postDiv);
      renderLikeButton(index);
-     optionsPost(index);
      addDeleteListener(post.id)
+     optionsPost(index);
    })
  }
 
@@ -80,7 +83,7 @@ function addDeleteListener(id) {
    let contentDiv = document.createElement('div');
    contentDiv.className = "post-content  d-flex flex-column";
    contentDiv.innerHTML =
-    `<div class="d-flex justify-content-between">
+     `<div class="d-flex justify-content-between">
       <span class="user-post" id ="username_post">${post.user.username}</span>
       <div id="userOptions${index}">
         <a href="/posts/${post.id}/edit" class="edit"><i class="fas fa-pencil-alt mx-1"></i></a>
@@ -97,7 +100,7 @@ function addDeleteListener(id) {
       <a rel="noopener" href="https://api.whatsapp.com/send?text=${post.user.username}+posted+this:+*${post.message}*+on+https://acebook-jaanis.herokuapp.com/" title="Share on Whatsapp" target="_blank" class="share"><i class="fab fa-whatsapp"></i></a>
       <span class="post-date align-self-end ml-5">${post.created_at}</span>
     </div>`;
-    postDiv.appendChild(contentDiv);
+   postDiv.appendChild(contentDiv);
  }
 
  function renderLikeButton(index) {

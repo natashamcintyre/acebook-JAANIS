@@ -1,10 +1,10 @@
 require 'rails_helper'
-require_relative "../helpers/feature_helpers.rb"
+require_relative '../helpers/feature_helpers'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     create_user_and_login
-    expect(current_path).to eq("/posts")
+    expect(page).to have_current_path("/posts")
     fill_in "postBox", with: "Hello, world!"
     click_button "send-button"
     expect(page).to have_content("Hello, world!")
