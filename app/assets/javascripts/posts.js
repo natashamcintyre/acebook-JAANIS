@@ -1,7 +1,8 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   fetch('https://acebook-jaanis-2.herokuapp.com/api/v1/posts', {
+   console.log(`fetching posts`)
+   fetch('https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts', {
      mode: 'no-cors'
    })
      .then(response => response.json())
