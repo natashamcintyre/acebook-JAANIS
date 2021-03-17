@@ -17,6 +17,7 @@
 
 
  function getPostData(message) {
+   console.log(`submitting post`)
    fetch('https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts', {
        method: 'POST',
        mode: 'no-cors',
@@ -25,11 +26,10 @@
        },
        body: JSON.stringify({
          "message": `${message}`
-
        })
-
      })
      .then(function () {
+       console.log(`submitted post, now in the 'then'`)
        getAllPosts()
      })
  }
