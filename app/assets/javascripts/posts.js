@@ -17,7 +17,7 @@
 
 
  function getPostData(message) {
-   fetch('http://localhost:3000/api/v1/posts', {
+   fetch('https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts', {
        method: 'POST',
        mode: 'no-cors',
        headers: {
@@ -44,7 +44,7 @@
 function addDeleteListener(id) {
   document.getElementById(`delete-${id}`).addEventListener("click", function (event) {
     event.preventDefault()
-    fetch(`http://localhost:3000/api/v1/posts/${id}`, {
+    fetch(`https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts/${id}`, {
       method: 'DELETE',
     })
     .then(function () {
