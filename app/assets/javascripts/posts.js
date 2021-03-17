@@ -1,29 +1,21 @@
  document.onload = getAllPosts();
 
  function getAllPosts() {
-   console.log(`fetching posts`)
    fetch('/api/v1/posts', {
-
    })
      .then(function(response) {
-       console.log(response)
        result = response.json()
-       console.log(result)
        return result
      })
      .then(function(data) {
-       console.log(`data is`)
-       console.log(data)
        renderPost(data)
      })
  }
 
 
  function getPostData(message) {
-   console.log(`submitting post`)
    fetch('/api/v1/posts', {
        method: 'POST',
-
        headers: {
          'Content-Type': 'application/json',
        },
@@ -32,7 +24,7 @@
        })
      })
      .then(function () {
-       console.log(`submitted post, now in the 'then'`)
+       document.getElementById('postBox').value = ''
        getAllPosts()
      })
  }
