@@ -5,7 +5,9 @@
    fetch('https://acebook-jaanis-natasha.herokuapp.com/api/v1/posts', {
      mode: 'no-cors'
    })
-     .then(response => response.json())
+     .then(function(response) {
+       response.json()
+     })
      .then(data => renderPost(data));
  }
 
