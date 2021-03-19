@@ -1,9 +1,7 @@
 <h2 align=center><a href="https://acebook-jaanis-natasha.herokuapp.com/">AceBook JAANIS</a></h2>
 
-An imitation of Facebook, built over 2 weeks in an agile team to learn Rails and APIs, as a project on the Makers Academy course. Project goals included agile teamwork, MVP and planning, learning Rails, MVC and Active Record. 
-[Project outline here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails). Required teamwork, prioritisation, planning, self learning, sharing knowledge, supporting one another and presenting sprints to a client.
-
-### Screenshots
+An imitation of Facebook, built over 2 weeks in an agile team to learn Rails and APIs, as a project on the Makers Academy course. Project goals included agile teamwork, MVP and planning, learning Rails, MVC and Active Record. Project outline [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).  
+Required teamwork, prioritisation, planning, self learning, sharing knowledge, supporting one another and presenting sprints to clients.
 
 <img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/signup-screenshot.png">
 <img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/posts-screenshot.png">
