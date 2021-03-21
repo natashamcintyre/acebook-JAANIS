@@ -2,7 +2,7 @@
 
 An imitation of Facebook, built over 2 weeks in an agile team to learn Rails and APIs, as a project on the Makers Academy course. Project goals included agile teamwork, MVP and planning, learning Rails, MVC and Active Record. Project outline [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).  
 
-Required teamwork, prioritisation, planning, research skills, self learning, sharing knowledge, supporting one another and presenting sprints to clients.
+Required teamwork, prioritisation, planning, research skills, self learning, sharing knowledge, supporting one another and presenting sprints to clients. Reflection [here](https://github.com/natashamcintyre/acebook-JAANIS/wiki/Reflection)
 
 <img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/signup-screenshot.png">
 <img src="https://github.com/Acebook-Jaanis/acebook-JAANIS/blob/master/posts-screenshot.png">
