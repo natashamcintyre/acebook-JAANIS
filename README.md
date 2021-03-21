@@ -1,6 +1,6 @@
 <h2 align=center><a href="https://acebook-jaanis-natasha.herokuapp.com/">AceBook JAANIS</a></h2>
 
-<h2 align=center><a href="https://github.com/natashamcintyre/acebook-JAANIS#screenshots">Screenshots</a><a href="https://github.com/natashamcintyre/acebook-JAANIS#how-to-use">How to Use</a><a href="https://github.com/natashamcintyre/acebook-JAANIS#the-devs-behind-the-code">The Team</a><a href="https://github.com/natashamcintyre/acebook-JAANIS#project-management">Project Management</a></h2>
+<h4 align=center><a href="https://github.com/natashamcintyre/acebook-JAANIS#screenshots">Screenshots</a> | <a href="https://github.com/natashamcintyre/acebook-JAANIS#how-to-use">How to Use</a> | <a href="https://github.com/natashamcintyre/acebook-JAANIS#the-devs-behind-the-code">The Team</a> | <a href="https://github.com/natashamcintyre/acebook-JAANIS#project-management">Project Management</a></h4>
 
 An imitation of Facebook, built over 2 weeks in an agile team to learn Rails and APIs, as a project on the Makers Academy course. Project goals included agile teamwork, MVP and planning, learning Rails, MVC and Active Record. Project outline [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).  
 
